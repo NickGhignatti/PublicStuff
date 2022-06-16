@@ -10,7 +10,7 @@
 <ul><li>maximum flow</li></ul>
 
 ### Algorithm : 
-```
+```js
 EdmondsKarp(adjMatrix, source, sink)
     resCapArray <-- [] 
     while(path != NULL)
