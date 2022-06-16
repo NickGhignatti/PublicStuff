@@ -305,11 +305,14 @@ Complexity = O(Ef*)
 
 #### Edmonds - Karp
 ```js
-EdmondsKarp(G, s, t)
-1) set f(u, v) = 0
-2) p = bfs(Gf)
-3) increase the flow on p and update Gf
-4) repeat 2-3 while a path exists
+EdmondsKarp(adjMatrix, source, sink)
+    resCapArray <-- [] 
+    while(path != NULL)
+        flow <-- min(foreach (u, v) in path adjMatrix[u][v] - resCapArray[u][v])
+        foreach (u, v) in path
+            capacity[u][v] += flow
+	    capacity[v][u] -= flow
+    return sum(every flow passing through)
 	
 Complexity = O(nmm)
 ```
